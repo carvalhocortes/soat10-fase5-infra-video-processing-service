@@ -4,7 +4,7 @@ output "SQS_VIDEO_FILES_QUEUE_URL" {
 }
 
 output "SNS_VIDEO_FILES_TOPIC_ARN" {
-  description = "ARN do tópico SNS video-files"
+  description = "ARN do tópico SNS de arquivos de vídeo"
   value       = aws_sns_topic.video-files.arn
 }
 
