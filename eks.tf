@@ -11,6 +11,7 @@ resource "aws_eks_node_group" "eks-node" {
     max_size     = 10
   }
 
+
   update_config {
     max_unavailable = 1
   }
