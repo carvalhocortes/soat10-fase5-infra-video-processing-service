@@ -1,7 +1,7 @@
 resource "aws_eks_node_group" "eks-node" {
   cluster_name    = aws_eks_cluster.eks-cluster.name
   node_group_name = var.NODE-GROUP
-  node_role_arn   = "arn:aws:iam::${var.AWS-ACCOUNT-ID}:role/LabRole"
+  node_role_arn   = aws_iam_role.eks_node_group_role.arn
   subnet_ids      = [for subnet in data.aws_subnet.subnet : subnet.id if subnet.availability_zone != "${var.AWS-REGION}e"]
   instance_types  = [var.INSTANCE-TYPE]
 
@@ -19,7 +19,7 @@ resource "aws_eks_node_group" "eks-node" {
 
 resource "aws_eks_cluster" "eks-cluster" {
   name     = var.PROJECT-NAME
-  role_arn = "arn:aws:iam::${var.AWS-ACCOUNT-ID}:role/LabRole"
+  role_arn = aws_iam_role.eks_cluster_role.arn
 
   vpc_config {
     subnet_ids              = [for subnet in data.aws_subnet.subnet : subnet.id if subnet.availability_zone != "${var.AWS-REGION}e"]

@@ -25,11 +25,6 @@ variable "INSTANCE-TYPE" {
   default = "t3.medium"
 }
 
-variable "AWS-ACCOUNT-ID" {
-  type    = string
-  default = "548226336065"
-}
-
 variable "SES-DOMAIN" {
   type    = string
   default = "fiap.com.br"

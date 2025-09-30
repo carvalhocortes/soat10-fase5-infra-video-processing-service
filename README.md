@@ -143,10 +143,6 @@ aws eks update-kubeconfig --region us-west-2 --name eks-fiap-soat10
 
 ## 🔐 Segurança
 
-### IAM Roles
-
-- Utiliza `LabRole` existente para EKS
-
 ### Security Groups
 
 - Acesso restrito ao cluster EKS
