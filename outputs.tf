@@ -1,11 +1,11 @@
 output "SQS_VIDEO_FILES_QUEUE_URL" {
   description = "URL da fila SQS de arquivos de vídeo"
-  value       = aws_sqs_queue.sqs-video-files.id
+  value       = aws_sqs_queue.sqs-video-processing.id
 }
 
 output "SNS_VIDEO_FILES_TOPIC_ARN" {
   description = "ARN do tópico SNS de arquivos de vídeo"
-  value       = aws_sns_topic.video-files.arn
+  value       = aws_sns_topic.sns-video-processing.arn
 }
 
 output "S3_VIDEO_FILES_BUCKET_NAME" {
