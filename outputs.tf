@@ -18,12 +18,3 @@ output "S3_VIDEO_FILES_BUCKET_ARN" {
   value       = aws_s3_bucket.fiap_video_files.arn
 }
 
-output "EKS_CLUSTER_ROLE_ARN" {
-  description = "ARN da role IAM do cluster EKS"
-  value       = aws_iam_role.eks_cluster_role.arn
-}
-
-output "EKS_NODE_GROUP_ROLE_ARN" {
-  description = "ARN da role IAM do node group EKS"
-  value       = aws_iam_role.eks_node_group_role.arn
-}

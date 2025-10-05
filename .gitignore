@@ -36,7 +36,8 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Ignore all files on .vscode folder
+# Ignore any files on .vscode folder
 .vscode/
 
+# Ignore environment variable files
 .env
