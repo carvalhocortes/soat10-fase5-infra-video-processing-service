@@ -1,6 +1,20 @@
 resource "aws_s3_bucket" "fiap_video_files" {
-  bucket = "postech-soat10-bucket-video-files"
+  bucket = "postech-soat10-bucket-video-file"
+}
+
+resource "aws_s3_bucket_acl" "fiap_video_files_acl" {
+  bucket = aws_s3_bucket.fiap_video_files.id
   acl    = "private"
+
+  depends_on = [aws_s3_bucket_ownership_controls.fiap_video_files_ownership]
+}
+
+resource "aws_s3_bucket_ownership_controls" "fiap_video_files_ownership" {
+  bucket = aws_s3_bucket.fiap_video_files.id
+
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
 }
 
 resource "aws_s3_bucket_public_access_block" "fiap_video_files_block" {

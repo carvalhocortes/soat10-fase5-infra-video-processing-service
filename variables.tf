@@ -34,3 +34,7 @@ variable "SES-FROM-ADDRESS" {
   type    = string
   default = "no-reply@fiap.com.br"
 }
+
+variable "AWS_ACCOUNT_ID" {
+  type = string
+}

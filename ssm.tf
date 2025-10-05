@@ -2,14 +2,14 @@ resource "aws_ssm_parameter" "video_sqs_id" {
   name        = "/soat10/infra-video-manager/video_sqs_id"
   description = "URL da fila SQS de arquivos de vídeo"
   type        = "String"
-  value       = aws_sqs_queue.sqs-video-files.id
+  value       = aws_sqs_queue.sqs-video-processing.id
 }
 
 resource "aws_ssm_parameter" "video_sns_topic_arn" {
   name        = "/soat10/infra-video-manager/video_sns_topic_arn"
   description = "ARN do tópico SNS de arquivos de vídeo"
   type        = "String"
-  value       = aws_sns_topic.video-files.arn
+  value       = aws_sns_topic.sns-video-processing.arn
 
 }
 
